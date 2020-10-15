@@ -1,0 +1,32 @@
+body{
+	background-color:#888;
+	
+}
+
+div.cabinet-col{
+	
+		width:100%; 		 		
+		padding:10px 10px 25px 10px ;		
+	  	right: 100px;
+	  	left: 100px;
+	  	padding: 1rem;
+	  	/* text-align: center; */
+	  	
+} 
+
+ div.cabinet-card{
+	 background: #585f66;
+	 width: 600px;
+} 
+
+h5.card-title{
+	color: #fff;
+	font-size: 50px;
+	
+}
+
+h6.card-subtitle{
+	color: #fff;
+	font-size: 30px;
+	
+}
