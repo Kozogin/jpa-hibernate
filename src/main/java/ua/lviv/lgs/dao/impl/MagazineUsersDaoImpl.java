@@ -33,14 +33,8 @@ public class MagazineUsersDaoImpl implements MagazineUsersDao{
 	}
 
 	@Override
-	public MagazineUsers read(Integer id) {
-		MagazineUsers bucket = null;
-		try {
-			bucket = em.find(MagazineUsers.class, id);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		return bucket;
+	public MagazineUsers read(Integer id) {		
+		return null;
 	}	
 
 	@Override
@@ -50,16 +44,6 @@ public class MagazineUsersDaoImpl implements MagazineUsersDao{
 
 	@Override
 	public void delete(Integer id) {
-		try {
-			MagazineUsers bucket = read(id);
-			em.getTransaction().begin();
-			em.remove(bucket);
-			em.getTransaction().commit();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
 	}
 	
 	public void delete(Integer userId, Integer magazine_id) {
@@ -75,6 +59,31 @@ public class MagazineUsersDaoImpl implements MagazineUsersDao{
 	    TypedQuery<MagazineUsers> allQuery = em.createQuery(all);
 	    
 	    return allQuery.getResultList();
+	}
+
+	@Override
+	public MagazineUsers read(String id) {
+		MagazineUsers bucket = null;
+		try {
+			bucket = em.find(MagazineUsers.class, id);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return bucket;
+	}
+
+	@Override
+	public void delete(String id) {
+		
+		try {
+			MagazineUsers bucket = read(id);
+			em.getTransaction().begin();
+			em.remove(bucket);
+			em.getTransaction().commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 

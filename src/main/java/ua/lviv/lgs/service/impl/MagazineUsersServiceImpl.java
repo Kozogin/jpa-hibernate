@@ -48,4 +48,14 @@ public class MagazineUsersServiceImpl implements MagazineUsersService{
 		return magazineUsersDao.readAll();
 	}
 
+	@Override
+	public MagazineUsers read(String id) {
+		return magazineUsersDao.read(id);
+	}
+
+	@Override
+	public void delete(String id) {
+		magazineUsersDao.delete(id);
+	}
+
 }
