@@ -56,13 +56,9 @@ public class BucketController extends HttpServlet {
 	}
 	
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("do delete bucket");
-		
-		String bucketId = request.getParameter("bucketId");
-		System.out.println(bucketId);
-		
-		magazineUsersService.delete(bucketId);
+	
+		String bucketId = request.getParameter("bucketId");		
+		magazineUsersService.delete(Integer.parseInt(bucketId));
 		
 		response.setContentType("text");
 		response.setCharacterEncoding("UTF-8");

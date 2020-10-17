@@ -1,4 +1,3 @@
-var idBucketArr = [];
 
 function myFunction() {
   // Declare variables
@@ -57,11 +56,11 @@ $.get("buckets", function(data) {
 				'<td style="width:15%;">' + value.price + '<td>' +
 				'<td style="width:15%;">' + value.isbn + '<td>' +
 				'<td style="width:15%;">' + value.purchaseDate + '<td>' +
-				'<td> <button onclick="deleteOrderFromBucket(' + i + ')">delete '+ value.bucketId + ' </button> <td>' + 
+				'<td> <button onclick="deleteOrderFromBucket(' + value.bucketId + ')">delete '+ value.bucketId + ' </button> <td>' + 
 			
 			'<tr>';
 				
-			idBucketArr[i] = value.bucketId;
+			
 			
 		});
 	
@@ -71,14 +70,14 @@ $.get("buckets", function(data) {
 });
 
 
-function deleteOrderFromBucket(buckedId){		
+function deleteOrderFromBucket(buckedId){
 		
 	var customUrl = "";
 	var urlContent = window.location.href.split('/');
 	for (var i = 0; i < urlContent.length - 1; i++) {
 		customUrl += urlContent[i] + "/";
 	}			
-	customUrl += 'bucketContr?bucketId=' + idBucketArr[buckedId];
+	customUrl += 'bucketContr?bucketId=' + buckedId;
 	
 	$.ajax({
 		url: customUrl,
